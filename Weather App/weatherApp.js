@@ -1,3 +1,5 @@
+require('dotenv').config();
+const apiKey = process.env.API_KEY;
 let cityInput = document.querySelector('#cityInput');
 let submitForm = document.querySelector('#cityInputForm');
 let suggestions = document.querySelector('#suggestions');
@@ -9,7 +11,7 @@ title.addEventListener('click', function () {
 
 submitForm.addEventListener('submit', function (event) {
     event.preventDefault();
-    axios.get(`https://api.weatherapi.com/v1/forecast.json?key=?&q=${cityInput.value}&days=5&aqi=no&alerts=no`)
+    axios.get(`https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${cityInput.value}&days=5&aqi=no&alerts=no`)
         .then((response) => {
             cityInput.value = ''
             localStorage.setItem('weatherData', JSON.stringify(response.data));
