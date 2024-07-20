@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     cityInputForm.addEventListener('submit', function (event) {
         event.preventDefault();
-        axios.get(`https://api.weatherapi.com/v1/forecast.json?key=?&q=${cityInput.value}&days=5&aqi=no&alerts=no`)
+        axios.get(`https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${cityInput.value}&days=5&aqi=no&alerts=no`)
             .then((response) => {
                 console.log('data fetched.');
                 cityInput.value = '';
