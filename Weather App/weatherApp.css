@@ -20,13 +20,14 @@ html {
 }
 
 #cityInputLabel {
-    /* position: absolute; */
+    font-size: 1.25vw;
     display: inline;
     color: white;
 }
 
 #cityInput {
-    /* position: absolute; */
+    font-size: 1vw;
+    height: 1.5vw;
     display: inline;
 }
 
