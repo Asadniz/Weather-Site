@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="C:\Weather App\errorPage.css">
+</head>
+
+<body>
+    <div id='headerContainer'>
+        <h1>Error 404: City not found.</h1>
+        <h2>Try writing the country name along with your city.</h2>
+        <img src="C:\Weather App\images\david-clode-0eJdryptOHQ-unsplash.jpg" alt="">
+        <form action="//" id='cityInputForm'>
+            <div id='weatherInput'>
+                <label for="cityInput" id='cityInputLabel'>
+                    City: <input type="text" id='cityInput' placeholder="Enter a city...">
+                </label>
+            </div>
+        </form>
+    </div>
+    <div id='weatherInfo'>
+        <p id='temperature'></p>
+        <p id='feelsLike'></p>
+        <p id='humidity'></p>
+    </div>
+
+    <script src='C:\Weather App\errorPage.js'></script>
+</body>
+
+</html>

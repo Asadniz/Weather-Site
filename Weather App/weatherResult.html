@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Results</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Headland+One&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="weatherResult.css">
+</head>
+
+<body>
+    <div id='navbar'>
+        <p>Wetharia</p>
+        <form action="" id='cityInputForm'>
+            <input type="text" id='cityInput' placeholder="Enter a city...">
+        </form>
+    </div>
+    <div id='weatherDetails'>
+        <h1 id='header'></h1>
+        <!-- <img src="C:\Weather App\images\henry-han-DXO0TN5DJvk-unsplash.jpg" alt=""> -->
+        <div>
+            <div id='currentWeatherInfo'>
+                <div id='currentTempInfo'>
+                    <img title='conditionImage' id='conditionImg' alt=''>
+                    <span id='currentTemperature'></span>
+                    <div>
+                        <span id='windSpeed'></span>
+                        <span id='humidity'></span>
+                    </div>
+                </div>
+                <div><span id='realFeel'></span></div>
+                <div id='currentTempCondition'>
+                    <span id='condition'></span>
+                    <span>.</span>
+                    <span id='currentTime'></span>
+                </div>
+            </div>
+            <div id='hourCast'>
+                <input type="range" min='0' max='11' step='1' value='0' oninput="updateValue(this.value)">
+                <div class='labels'>
+                    <span>12 AM</span> <span>2 AM</span> <span>4 AM</span>
+                    <span>6 AM</span> <span>8 AM</span> <span>10 AM</span>
+                    <span>12 PM</span> <span>2 PM</span> <span>4 PM</span>
+                    <span>6 PM</span> <span>8 PM</span> <span>10 PM</span>
+                </div>
+            </div>
+        </div>
+        <div id='weatherForecast'>
+        </div>
+        <div id='help'>
+            <h1>Can't find what you're looking for?</h1>
+            <h2>Try writing country name together.</h2>
+        </div>
+    </div>
+
+    <script src='C:\Weather App\weatherResult.js'></script>
+</body>
+
+</html>

@@ -1,0 +1,219 @@
+* {
+    font-family: 'lato', sans-serif;
+}
+
+body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    background-image: url('C:/Weather App/images/simon-fitall-7QUe_QeGOqY-unsplash.jpg');
+}
+
+h1 {
+    font-size: 3vw;
+}
+
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #134B70;
+    width: 100%;
+    height: 8vh;
+    /* background-image: url('C:/Weather App/images/erol-ahmed-wKTF65TcReY-unsplash.jpg'); */
+    /* background-position: center; */
+    */
+}
+
+#header {
+    margin: 5vw 0;
+    color: white;
+}
+
+#weatherDetails {
+    display: grid;
+    place-items: center;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+}
+
+/* #weatherDetails img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} */
+
+#weatherForecast {
+    width: 50vw;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 1vw 0;
+}
+
+#weatherForecast div {
+    background-color: #60a9ff;
+    width: 22vw;
+    height: 20vw;
+    border: 1px solid #60a9ff;
+    border-right: 1px solid #f0f0f0;
+}
+
+#weatherForecast div:nth-child(5) {
+    border-right: 1px solid #60a9ff;
+}
+
+#weatherForecast div span {
+    color: white;
+    text-align: center;
+    display: block;
+    font-size: 1.25vw;
+    margin: 0 0 2.25vw 0;
+}
+
+#weatherForecast div span:nth-child(1) {
+    margin: 0 0 1vw 0;
+}
+
+#conditionImg {
+    width: 8vw;
+    height: 12vh;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    margin: 1vw 0 0 0;
+}
+
+#currentTempInfo {
+    width: 50vw;
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+#currentTemperature {
+    font-size: 3.5vw;
+    margin: 1vw 12vw 0 0;
+    text-align: end;
+    padding: 1vw 0 0 0;
+}
+
+#realFeel {
+    font-size: 2vw;
+    /* padding: 0 0 1vw 6vw; */
+    margin: 0 0 0 5vw;
+}
+
+#currentTempCondition {
+    margin: 3vw 0 0 5vw;
+    display: flex;
+    gap: 1vw;
+}
+
+#currentTempCondition span {
+    font-size: 2vw;
+    margin: 0 0 1vw 0;
+}
+
+#weatherForecast div img {
+    width: 4vw;
+    padding: 0 0 0 2.75vw;
+    margin: 0 0 1vw 0;
+}
+
+#currentTempInfo div {
+    padding: 3vw 0 0 4vw;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+#currentTempInfo div span {
+    font-size: 2vw;
+    margin-bottom: 1vw;
+}
+
+input[type=range] {
+    width: 50vw;
+    margin: 2vw 0;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: .5vh;
+    background: white;
+    border-radius: 5%;
+    cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: .75vw;
+    height: 3vh;
+    background: white;
+    cursor: pointer;
+    border-radius: 30%;
+    margin: -.65vw 0 0 .25vw;
+    box-shadow: 0 0 2vw rgba(0, 0, 0, 0.3);
+}
+
+#hourCast {
+    text-align: center;
+    width: 80%;
+    position: relative;
+    margin: auto;
+}
+
+.labels {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2.75vw;
+    margin: 0 0 3vw 0;
+}
+
+.labels span {
+    font-size: 1.1vw;
+    color: white;
+}
+
+
+#navbar p {
+    font-family: 'headland one', sans-serif;
+    font-size: 2.5vw;
+    color: white;
+    margin: 0 0 0 .25vw;
+    /* padding: 1vw 0 0 0; */
+}
+
+#navbar input {
+    margin: 0 .25vw 0 0;
+}
+
+#navbar p:hover {
+    cursor: pointer;
+}
+
+#help h2 {
+    font-size: 1.5vw;
+    text-align: center;
+}
+
+#help h1,
+h2 {
+    color: white;
+}
+
+#currentWeatherInfo {
+    width: 50.5vw;
+    height: 20vw;
+    background-color: rgb(52, 103, 215);
+    margin: 0 0 2.5vw 10%;
+}
+
+#currentWeatherInfo * {
+    color: white;
+}
