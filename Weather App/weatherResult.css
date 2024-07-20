@@ -190,6 +190,8 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 #navbar input {
+    font-size: 1vw;
+    height: 1.5vw;
     margin: 0 .25vw 0 0;
 }
 
