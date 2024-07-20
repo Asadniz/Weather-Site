@@ -1,3 +1,5 @@
+require('dotenv').config();
+const apiKey = process.env.API_KEY;
 let cityInput = document.querySelector('#cityInput');
 let submitForm = document.querySelector('#cityInputForm');
 submitForm.addEventListener('submit', function (event) {
