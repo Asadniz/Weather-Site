@@ -1,3 +1,5 @@
+require('dotenv').config();
+const apiKey = process.env.API_KEY;
 const weather = JSON.parse(localStorage.getItem('weatherData'));
 const hourlyForecast = weather.forecast.forecastday[0].hour;
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
