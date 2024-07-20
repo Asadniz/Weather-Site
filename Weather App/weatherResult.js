@@ -1,5 +1,3 @@
-require('dotenv').config();
-const apiKey = process.env.API_KEY;
 const weather = JSON.parse(localStorage.getItem('weatherData'));
 const hourlyForecast = weather.forecast.forecastday[0].hour;
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -78,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     cityInputForm.addEventListener('submit', function (event) {
         event.preventDefault();
-        axios.get(`https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${cityInput.value}&days=5&aqi=no&alerts=no`)
+        axios.get(`https://api.weatherapi.com/v1/forecast.json?key='your-api-key'&q=${cityInput.value}&days=5&aqi=no&alerts=no`)
             .then((response) => {
                 console.log('data fetched.');
                 cityInput.value = '';
