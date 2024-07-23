@@ -2,45 +2,62 @@ const apiKey = 'your-api-key';
 const weather = JSON.parse(localStorage.getItem('weatherData'));
 const hourlyForecast = weather.forecast.forecastday[0].hour;
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-let currentTemp = document.querySelector('#currentTemperature');
-let realFeel = document.querySelector('#realFeel');
-let condition = document.querySelector('#condition');
-let currentTime = document.querySelector('#currentTime');
-let humidity = document.querySelector('#humidity');
-let windSpeed = document.querySelector('#windSpeed');
-let conditionImg = document.querySelector('#conditionImg');
-let webTitle = document.querySelector('#navbar p');
-let helpInfo = document.querySelector('#help');
-let mainInfoTab = document.querySelector('#currentWeatherInfo');
-let slider = document.querySelector('#hourCast input');
-let displayHour;
+
+const currentTemp = document.querySelector('#currentTemperature');
+const realFeel = document.querySelector('#realFeel');
+const condition = document.querySelector('#condition');
+const humidity = document.querySelector('#humidity');
+const windSpeed = document.querySelector('#windSpeed');
+const conditionImg = document.querySelector('#conditionImg');
+
+const forecastTag = function (day, appendingDivider) {
+    const divider = document.createElement('div');
+    const daySpan = document.createElement('span');
+    const iconImg = document.createElement('img');
+    const highSpan = document.createElement('span');
+    const lowSpan = document.createElement('span');
+    const maxWind = document.createElement('span');
+
+    daySpan.textContent = `${days[(parseInt(weather.location.localtime.slice(8, 10)) % 7)]} ${day.date.slice(8)} `;
+    highSpan.textContent = `High: ${day.day.maxtemp_c}°C `;
+    lowSpan.textContent = `Low: ${day.day.mintemp_c}°C`;
+    iconImg.src = `https:${day.day.condition.icon}`;
+    maxWind.textContent = `Max wind: ${day.day.maxwind_mph} mph`;
+    divider.append(daySpan);
+    divider.append(iconImg);
+    divider.append(highSpan);
+    divider.append(lowSpan);
+    divider.append(maxWind);
+    appendingDivider.append(divider);
+}
+
+const webTitle = document.querySelector('#navbar p');
 
 webTitle.addEventListener('click', function () {
     window.location.href = 'weatherApp.html';
 })
 
 document.addEventListener('DOMContentLoaded', function () {
-    let cityInput = document.querySelector('#cityInput');
-    let cityInputForm = document.querySelector('#cityInputForm');
-    let header = document.querySelector('#header');
-    let forecastDiv = document.querySelector('#weatherForecast');
-    const currentHour = new Date().getHours();
     console.log(weather);
+
+    const currentHour = new Date().getHours();
+    let displayHour;
 
     if (currentHour >= 12) {
         displayHour = 6 + (Math.floor((currentHour - 12) / 2));
     }
+
     else {
         displayHour = Math.floor(currentHour / 2);
     }
 
+    const slider = document.querySelector('#hourCast input');
     slider.value = displayHour;
+
+    const header = document.querySelector('#header');
     header.textContent = `Weather in ${weather.location.name}, ${weather.location.country}`;
-    currentTemp.textContent = `${weather.current.temp_c}°C`;
-    realFeel.textContent = `Real feel: ${weather.current.feelslike_c}°C`;
-    condition.textContent = `${weather.current.condition.text}`;
-    humidity.textContent = `Humidity: ${weather.current.humidity}%`;
-    windSpeed.textContent = `Wind: ${weather.current.wind_mph} MPH`;
+
+    updateValue(currentHour);
 
     let updateTime = weather.location.localtime.slice(11);
     if (parseInt(updateTime.slice(0, 2)) > 12) {
@@ -49,31 +66,18 @@ document.addEventListener('DOMContentLoaded', function () {
     else {
         updateTime = `${updateTime} am`;
     }
+
+    const currentTime = document.querySelector('#currentTime');
     currentTime.textContent = `${days[(parseInt(weather.location.localtime.slice(8, 10)) % 7)]} ${weather.location.localtime.slice(8, 10)}, ${updateTime}`;
-    conditionImg.src = `https:${weather.current.condition.icon}`;
 
-    let forecast = weather.forecast.forecastday;
-    console.log(forecast);
+    const forecast = weather.forecast.forecastday;
+    const forecastDiv = document.querySelector('#weatherForecast');
     for (let day of forecast) {
-        let divider = document.createElement('div');
-        let daySpan = document.createElement('span');
-        let iconImg = document.createElement('img');
-        let highSpan = document.createElement('span');
-        let lowSpan = document.createElement('span');
-        let maxWind = document.createElement('span');
-
-        daySpan.textContent = `${days[(parseInt(weather.location.localtime.slice(8, 10)) % 7)]} ${day.date.slice(8)} `;
-        highSpan.textContent = `High: ${day.day.maxtemp_c}°C `;
-        lowSpan.textContent = `Low: ${day.day.mintemp_c}°C`;
-        iconImg.src = `https:${day.day.condition.icon}`;
-        maxWind.textContent = `Max wind: ${day.day.maxwind_mph} mph`;
-        divider.append(daySpan);
-        divider.append(iconImg);
-        divider.append(highSpan);
-        divider.append(lowSpan);
-        divider.append(maxWind);
-        forecastDiv.append(divider);
+        forecastTag(day, forecastDiv);
     }
+
+    const cityInput = document.querySelector('#cityInput');
+    const cityInputForm = document.querySelector('#cityInputForm');
 
     cityInputForm.addEventListener('submit', function (event) {
         event.preventDefault();
@@ -93,13 +97,20 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 const updateValue = function (value) {
-    const hourlyForecast = weather.forecast.forecastday[0].hour;
-    let currentHour = parseInt(value.slice(0, 2));
-    if (value.includes('AM') || value === "12 PM") {
-        currentHour -= 1;
+    let currentHour
+    if (typeof (value) === 'string') {
+        currentHour = parseInt(value.slice(0, 2));
+        if (value.includes('AM') || value === "12 PM") {
+            currentHour -= 1;
+        }
+
+        else {
+            currentHour += 11;
+        }
     }
+
     else {
-        currentHour += 11;
+        currentHour = value;
     }
 
     currentTemp.textContent = `${hourlyForecast[currentHour].temp_c}°C`;
