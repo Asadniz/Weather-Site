@@ -6,7 +6,7 @@ body {
     background-color: white;
     margin: 0;
     padding: 0;
-    background-image: url('C:/Weather App/images/simon-fitall-7QUe_QeGOqY-unsplash.jpg');
+    background-image: url('./images/simon-fitall-7QUe_QeGOqY-unsplash.jpg');
 }
 
 h1 {
@@ -213,4 +213,5 @@ h2 {
 #currentWeatherInfo * {
     color: white;
 }
+
 
