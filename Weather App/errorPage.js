@@ -1,4 +1,4 @@
-const apiKey = 'your-api-key';
+const apiKey = API_KEY;
 let cityInput = document.querySelector('#cityInput');
 let submitForm = document.querySelector('#cityInputForm');
 submitForm.addEventListener('submit', function (event) {
@@ -14,3 +14,4 @@ submitForm.addEventListener('submit', function (event) {
             console.error('Error:', error);
         })
 })
+
