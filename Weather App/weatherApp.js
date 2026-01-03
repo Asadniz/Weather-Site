@@ -1,4 +1,4 @@
-const apiKey = API_KEY;
+const apiKey = 0a82d3be7cfa4fc0b8c134250241507;
 let cityInput = document.querySelector('#cityInput');
 let submitForm = document.querySelector('#cityInputForm');
 let suggestions = document.querySelector('#suggestions');
@@ -25,4 +25,5 @@ submitForm.addEventListener('submit', function (event) {
 
 
 // https://api.weatherapi.com/v1/search.json?key=0a82d3be7cfa4fc0b8c134250241507&q=${cityInput.value}&days=5&aqi=no&alerts=no
+
 
