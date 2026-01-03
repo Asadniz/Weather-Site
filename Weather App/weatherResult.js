@@ -1,4 +1,4 @@
-const apiKey = 0a82d3be7cfa4fc0b8c134250241507;
+const apiKey = 'e11651708afe455c90a74327242107';
 const weather = JSON.parse(localStorage.getItem('weatherData'));
 const hourlyForecast = weather.forecast.forecastday[0].hour;
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -120,5 +120,6 @@ const updateValue = function (value) {
     windSpeed.textContent = `Wind: ${hourlyForecast[currentHour].wind_mph} MPH`;
     conditionImg.src = `https:${hourlyForecast[currentHour].condition.icon}`;
 }
+
 
 
