@@ -19,8 +19,6 @@ html {
 
 }
 
-
-
 #cityInputLabel {
     font-size: 1.25vw;
     display: inline;
@@ -29,9 +27,7 @@ html {
 
 #cityInput {
     font-size: 1rem;
-    padding: 0.6rem 0.8rem; /* Increase padding for height */
-    width: 350px;
-    height: 45px;
+    padding: 0.6rem 0.8rem;
 }
 
 #headerContainer img {
@@ -74,4 +70,5 @@ html {
 #weatherInput {
     margin: 1vw 0 0 0;
 }
+
 
