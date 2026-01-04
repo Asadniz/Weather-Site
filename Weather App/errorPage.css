@@ -26,9 +26,8 @@ html {
 }
 
 #cityInput {
-    font-size: 1vw;
-    height: 1.5vw;
-    display: inline;
+    font-size: 1rem;
+    padding: 0.6rem 0.8rem;
 }
 
 #headerContainer img {
@@ -66,3 +65,4 @@ html {
     align-items: center;
     margin-top: 5vw;
 }
+
