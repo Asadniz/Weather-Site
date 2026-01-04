@@ -19,15 +19,13 @@ html {
 
 }
 
-#cityInputLabel {
-    font-size: 1.25vw;
-    display: inline;
-    color: white;
+#cityInput {
+    font-size: 1.1rem;
+    padding: 0.6rem 0.8rem;
 }
 
-#cityInput {
-    font-size: 1rem;
-    padding: 0.6rem 0.8rem;
+#inputDiv{
+    margin-top: 4rem;
 }
 
 #headerContainer img {
@@ -65,4 +63,5 @@ html {
     align-items: center;
     margin-top: 5vw;
 }
+
 
