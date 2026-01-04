@@ -5,30 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Headland+One&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="weatherApp.css">
+    <link rel="stylesheet" href="errorPage.css">
 </head>
 
 <body>
     <div id='headerContainer'>
-        <h1>Weatheria</h1>
-        <h2>Accurate weather of your city</h2>
+        <h1>Error 404: City not found.</h1>
+        <h2>Try writing the country name along with your city.</h2>
         <img src="C:\ProdigyInfoTech Internship\Weather App\images\david-clode-0eJdryptOHQ-unsplash.jpg" alt="">
-        <form id="cityInputForm">
-            <div class="form-group text-center mb-1">
+        <form id="cityInputForm" class="mt-4">
+            <div class="form-group text-center">
+                <label for="cityInput" class="font-weight-bold">City</label>
                 <input 
                     type="text" 
                     class="form-control w-50 mx-auto"
                     id="cityInput" 
-                    placeholder="Enter a city."
+                    placeholder="Enter a city..."
                 >
             </div>
         </form>
-
     </div>
     <div id='weatherInfo'>
         <p id='temperature'></p>
@@ -36,9 +32,7 @@
         <p id='humidity'></p>
     </div>
 
-    <script src='weatherApp.js'></script>
+    <script src='errorPage.js'></script>
 </body>
 
 </html>
-
-<!-- https://ask-nature.sfo3.digitaloceanspaces.com/wp-content/uploads/2023/03/31103902/shutterstock_1093045490-2160x1431.jpg -->
